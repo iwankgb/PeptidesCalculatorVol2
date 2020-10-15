@@ -1,51 +1,51 @@
 import csv
 
+
 class CalcDataBase:
 
     def data_base(self, user_choice):
-
         """amino and endings data base"""
         protectedamino = {"F": 147.1734,
-                        "P": 97.11508,
-                        "H": 379.4594,
-                        "R": 408.4861,
-                        "N": 356.4228,
-                        "D": 171.1953,
-                        "W": 286.3265,
-                        "E": 185.2219,
-                        "M": 131.1985,
-                        "K": 228.2894,
-                        "C": 345.4654,
-                        "T": 157.2119,
-                        "S": 143.18533,
-                        "I": 113.1576,
-                        "Y": 219.2808,
-                        "V": 99.13103,
-                        "L": 113.1576,
-                        "Q": 370.4493,
-                        "A": 71.07793,
-                        "G": 57.05138}
+                          "P": 97.11508,
+                          "H": 379.4594,
+                          "R": 408.4861,
+                          "N": 356.4228,
+                          "D": 171.1953,
+                          "W": 286.3265,
+                          "E": 185.2219,
+                          "M": 131.1985,
+                          "K": 228.2894,
+                          "C": 345.4654,
+                          "T": 157.2119,
+                          "S": 143.18533,
+                          "I": 113.1576,
+                          "Y": 219.2808,
+                          "V": 99.13103,
+                          "L": 113.1576,
+                          "Q": 370.4493,
+                          "A": 71.07793,
+                          "G": 57.05138}
 
-        amino = {       "F": 147.1734,
-                        "P": 97.11508,
-                        "H": 137.1394,
-                        "R": 156.1861,
-                        "N": 114.1028,
-                        "D": 115.0873,
-                        "W": 186.2095,
-                        "E": 129.1139,
-                        "M": 131.1985,
-                        "K": 128.1724,
-                        "C": 103.1454,
-                        "T": 101.1039,
-                        "S": 87.07733,
-                        "I": 113.1576,
-                        "Y": 163.1728,
-                        "V": 99.13103,
-                        "L": 113.1576,
-                        "Q": 128.1293,
-                        "A": 71.07793,
-                        "G": 57.05138}
+        amino = {"F": 147.1734,
+                 "P": 97.11508,
+                 "H": 137.1394,
+                 "R": 156.1861,
+                 "N": 114.1028,
+                 "D": 115.0873,
+                 "W": 186.2095,
+                 "E": 129.1139,
+                 "M": 131.1985,
+                 "K": 128.1724,
+                 "C": 103.1454,
+                 "T": 101.1039,
+                 "S": 87.07733,
+                 "I": 113.1576,
+                 "Y": 163.1728,
+                 "V": 99.13103,
+                 "L": 113.1576,
+                 "Q": 128.1293,
+                 "A": 71.07793,
+                 "G": 57.05138}
 
         endingsn = {"Hydrogen": 1.00797,
                     "Biotin": 227.3056,
@@ -80,12 +80,13 @@ class CalcDataBase:
                     for element in row:  # changes lists into one list
                         my_list.append(element)
 
-                del my_list[0:2] #remove headers
+                del my_list[0:2]  # remove headers
 
+            nonstandard = {my_list[ele]: my_list[ele + 1]
+                           for ele in range(0, len(my_list), 2)}  # convertion to a dict
 
-            nonstandard = {my_list[ele]: my_list[ele + 1] for ele in range(0, len(my_list), 2)}  #convertion to a dict
-
-            nonstandard.update((key, float(val)) for key, val in nonstandard.items())
+            nonstandard.update((key, float(val))
+                               for key, val in nonstandard.items())
         except (IndexError, FileNotFoundError):
             pass
         test_input = user_choice

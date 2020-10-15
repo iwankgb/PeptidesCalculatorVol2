@@ -13,6 +13,6 @@ class Converter:
                 self.converted_list.append(item)
 
         '''removed '*' from converted_list'''
-        self.converted_final_list = map(lambda element: element.strip('*'), self.converted_list)
+        self.converted_final_list = map(
+            lambda element: element.strip('*'), self.converted_list)
         return [element.upper() for element in self.converted_final_list]
-

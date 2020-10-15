@@ -13,7 +13,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1251, 456)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -54,13 +55,15 @@ class Ui_MainWindow(object):
         font.setPointSize(10)
         self.checkBox_2.setFont(font)
         self.checkBox_2.setObjectName("checkBox_2")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.checkBox_2)
+        self.formLayout.setWidget(
+            0, QtWidgets.QFormLayout.LabelRole, self.checkBox_2)
         self.checkBox = QtWidgets.QCheckBox(self.groupBox)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.checkBox.setFont(font)
         self.checkBox.setObjectName("checkBox")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.checkBox)
+        self.formLayout.setWidget(
+            1, QtWidgets.QFormLayout.LabelRole, self.checkBox)
         self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 1)
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -144,7 +147,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setStyleSheet("color: rgb(0, 0, 255);\n"
-                                        "background-color: rgb(170, 255, 255);")
+                                      "background-color: rgb(170, 255, 255);")
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.verticalLayout.addWidget(self.lineEdit_3)
         self.gridLayout.addWidget(self.frame, 3, 0, 1, 1)
@@ -164,17 +167,21 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.actionShow_Protected_Amino_Acid.setFont(font)
-        self.actionShow_Protected_Amino_Acid.setObjectName("actionShow_Protected_Amino_Acid")
-        self.actionShow_Not_Protected_Amino_Acid = QtWidgets.QAction(MainWindow)
+        self.actionShow_Protected_Amino_Acid.setObjectName(
+            "actionShow_Protected_Amino_Acid")
+        self.actionShow_Not_Protected_Amino_Acid = QtWidgets.QAction(
+            MainWindow)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.actionShow_Not_Protected_Amino_Acid.setFont(font)
-        self.actionShow_Not_Protected_Amino_Acid.setObjectName("actionShow_Not_Protected_Amino_Acid")
+        self.actionShow_Not_Protected_Amino_Acid.setObjectName(
+            "actionShow_Not_Protected_Amino_Acid")
         self.actionAdd_Custom_Amino_Acid = QtWidgets.QAction(MainWindow)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.actionAdd_Custom_Amino_Acid.setFont(font)
-        self.actionAdd_Custom_Amino_Acid.setObjectName("actionAdd_Custom_Amino_Acid")
+        self.actionAdd_Custom_Amino_Acid.setObjectName(
+            "actionAdd_Custom_Amino_Acid")
         self.actionExit = QtWidgets.QAction(MainWindow)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -194,12 +201,14 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.actionDelete_Unusual_Amino_Acid.setFont(font)
-        self.actionDelete_Unusual_Amino_Acid.setObjectName("actionDelete_Unusual_Amino_Acid")
+        self.actionDelete_Unusual_Amino_Acid.setObjectName(
+            "actionDelete_Unusual_Amino_Acid")
         self.actionShow_Unusual_Amino_Acid = QtWidgets.QAction(MainWindow)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.actionShow_Unusual_Amino_Acid.setFont(font)
-        self.actionShow_Unusual_Amino_Acid.setObjectName("actionShow_Unusual_Amino_Acid")
+        self.actionShow_Unusual_Amino_Acid.setObjectName(
+            "actionShow_Unusual_Amino_Acid")
         self.menuMenu.addAction(self.actionShow_Unusual_Amino_Acid)
         self.menuMenu.addAction(self.actionShow_Not_Protected_Amino_Acid)
         self.menuMenu.addAction(self.actionShow_Protected_Amino_Acid)
@@ -221,12 +230,17 @@ class Ui_MainWindow(object):
         MainWindow.setTabOrder(self.pushButton, self.lineEdit_2)
 
         '''connection between interface buttons and functions'''
-        self.actionShow_Unusual_Amino_Acid.triggered.connect(self.open_data_printer_unusual)
-        self.actionShow_Protected_Amino_Acid.triggered.connect(self.amino_protected)
-        self.actionShow_Not_Protected_Amino_Acid.triggered.connect(self.amino_not_protected)
+        self.actionShow_Unusual_Amino_Acid.triggered.connect(
+            self.open_data_printer_unusual)
+        self.actionShow_Protected_Amino_Acid.triggered.connect(
+            self.amino_protected)
+        self.actionShow_Not_Protected_Amino_Acid.triggered.connect(
+            self.amino_not_protected)
         self.actionTerminus.triggered.connect(self.endings)
-        self.actionDelete_Unusual_Amino_Acid.triggered.connect(self.open_window_delete)
-        self.actionAdd_Custom_Amino_Acid.triggered.connect(self.open_window_add)
+        self.actionDelete_Unusual_Amino_Acid.triggered.connect(
+            self.open_window_delete)
+        self.actionAdd_Custom_Amino_Acid.triggered.connect(
+            self.open_window_add)
         self.actionInstruction.triggered.connect(self.help)
         self.actionExit.triggered.connect(MainWindow.close)
 
@@ -234,31 +248,30 @@ class Ui_MainWindow(object):
 
         '''add items to the combo box'''
         self.n_terminus_list = [
-                                "Hydrogen",
-                                "Biotin",
-                                "Acetyl",
-                                '5-FAM',
-                                '5-TAMRA',
-                                'DABCYL',
-                                'Fmoc',
-                                'Pyr',
-                                'Myr',
-                                'Z',
-                                'DOTA',
-                                        ]
+            "Hydrogen",
+            "Biotin",
+            "Acetyl",
+            '5-FAM',
+            '5-TAMRA',
+            'DABCYL',
+            'Fmoc',
+            'Pyr',
+            'Myr',
+            'Z',
+            'DOTA',
+        ]
 
         self.c_terminus_list = [
-                                "Free",
-                                "Amid",
-                                'Aldehyde',
-                                'AFC',
-                                'CMK',
-                                'EDANS',
-                                        ]
+            "Free",
+            "Amid",
+            'Aldehyde',
+            'AFC',
+            'CMK',
+            'EDANS',
+        ]
 
         self.comboBox.addItems(self.n_terminus_list)
         self.comboBox_2.addItems(self.c_terminus_list)
-
 
     def open_calculation_process(self):
 
@@ -282,35 +295,39 @@ class Ui_MainWindow(object):
         '''transforms user choice'''
         self.user_choice = self.user_choice_1 + str("E")
 
-        self.data_input = self.lineEdit.text() #takes data from LineEdit
+        self.data_input = self.lineEdit.text()  # takes data from LineEdit
         self.counting = Sequence()
 
         '''sends sequence from lineEdit to calculator'''
-        calculation_return = self.counting.enter_sequence(self.data_input, self.user_choice, self.n_terminus, self.c_terminus) #use return multiple values
+        calculation_return = self.counting.enter_sequence(
+            self.data_input, self.user_choice, self.n_terminus, self.c_terminus)  # use return multiple values
 
-        if calculation_return[0:6] == 'Please': #Please - means an error
+        if calculation_return[0:6] == 'Please':  # Please - means an error
             return self.open_error(calculation_return)
         else:
             result = calculation_return[0]
 
             if result == 'Please be informed that sequence is incorrect;Amino acid or unusual amino acid, doesnt exist':
-                 return self.open_error(result)
+                return self.open_error(result)
             else:
                 pep_sequence = calculation_return[1]
                 converted_result = str(result)
                 convert_pep_sequence = str(pep_sequence)
 
-                self.lineEdit_3.setText(converted_result) #gives result to Interface
-                self.lineEdit_2.setText(convert_pep_sequence) #gives sequence to Interface
+                # gives result to Interface
+                self.lineEdit_3.setText(converted_result)
+                # gives sequence to Interface
+                self.lineEdit_2.setText(convert_pep_sequence)
 
     def open_data_printer_unusual(self):
 
-        self.menuMenu.setEnabled(False) #block menu
-        self.disables_menu_buttons() #block "menu show function" in case user uses keyboard shortcut
+        self.menuMenu.setEnabled(False)  # block menu
+        # block "menu show function" in case user uses keyboard shortcut
+        self.disables_menu_buttons()
         self.unusualamino = Data_Printer()
         comunicate = self.unusualamino.print_unusual_amino_acid()
 
-        if comunicate != None: #if file exist returns None if error then returns message
+        if comunicate != None:  # if file exist returns None if error then returns message
             return self.open_error(comunicate)
         self.enable_menu_buttons()
         self.menuMenu.setEnabled(True)
@@ -330,8 +347,8 @@ class Ui_MainWindow(object):
         self.amino = Data_Printer()
         comunicate = self.amino.print_protected_amino_acid_and_not(type)
 
-        if comunicate != None: #Returns none when function "print_protected_amino_acid_and_not" has no error, if ico file does not exist it returns error.
-           return self.open_error(comunicate)
+        if comunicate != None:  # Returns none when function "print_protected_amino_acid_and_not" has no error, if ico file does not exist it returns error.
+            return self.open_error(comunicate)
         self.enable_menu_buttons()
         self.menuMenu.setEnabled(True)
 
@@ -349,7 +366,7 @@ class Ui_MainWindow(object):
 
     def help(self):
 
-        path= os.getcwd()
+        path = os.getcwd()
         full_path = f'{path}\help text.pdf'
         if os.path.isfile(full_path) == False:
             return self.open_error("Help can't be displayed, because 'help text.pdf' doesn't exist")
@@ -357,6 +374,7 @@ class Ui_MainWindow(object):
             os.startfile(full_path)
 
     '''open error window'''
+
     def open_error(self, communique):
         self.open = QtWidgets.QFrame()
         self.ui = Ui_Frame()
@@ -366,6 +384,7 @@ class Ui_MainWindow(object):
         self.menuMenu.setEnabled(True)
 
     '''disable menu buttons'''
+
     def disables_menu_buttons(self):
         self.actionShow_Unusual_Amino_Acid.setEnabled(False)
         self.actionShow_Protected_Amino_Acid.setEnabled(False)
@@ -373,6 +392,7 @@ class Ui_MainWindow(object):
         self.actionTerminus.setEnabled(False)
 
     '''enable menu buttons'''
+
     def enable_menu_buttons(self):
         self.actionShow_Unusual_Amino_Acid.setEnabled(True)
         self.actionShow_Protected_Amino_Acid.setEnabled(True)
@@ -381,43 +401,67 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PeptideMassCalculator"))
-        self.label_4.setText(_translate("MainWindow", "Peptide Sequence Check"))
-        self.groupBox.setTitle(_translate("MainWindow", "Choose Amino Acid Type"))
-        self.checkBox_2.setText(_translate("MainWindow", "Protected Amino Acid"))
-        self.checkBox.setText(_translate("MainWindow", "Not Protected Amino Acid"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "PeptideMassCalculator"))
+        self.label_4.setText(_translate(
+            "MainWindow", "Peptide Sequence Check"))
+        self.groupBox.setTitle(_translate(
+            "MainWindow", "Choose Amino Acid Type"))
+        self.checkBox_2.setText(_translate(
+            "MainWindow", "Protected Amino Acid"))
+        self.checkBox.setText(_translate(
+            "MainWindow", "Not Protected Amino Acid"))
         self.label_3.setText(_translate("MainWindow", "C-Terminus"))
         self.label_2.setText(_translate("MainWindow", "Sequence"))
         self.label.setText(_translate("MainWindow", "N-Terminus"))
         self.pushButton.setText(_translate("MainWindow", "CALCULATE"))
-        self.label_5.setText(_translate("MainWindow", "Peptide Molecular Weight"))
+        self.label_5.setText(_translate(
+            "MainWindow", "Peptide Molecular Weight"))
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         self.actionShow.setText(_translate("MainWindow", "Show"))
-        self.actionShow_Protected_Amino_Acid.setText(_translate("MainWindow", "Show Protected Amino Acid"))
-        self.actionShow_Protected_Amino_Acid.setStatusTip(_translate("MainWindow", "Shows protected amino acid table"))
-        self.actionShow_Protected_Amino_Acid.setShortcut(_translate("MainWindow", "Ctrl+2"))
-        self.actionShow_Not_Protected_Amino_Acid.setText(_translate("MainWindow", "Show Amino Acid"))
-        self.actionShow_Not_Protected_Amino_Acid.setStatusTip(_translate("MainWindow", "Shows amino acid table"))
-        self.actionShow_Not_Protected_Amino_Acid.setShortcut(_translate("MainWindow", "Ctrl+1"))
-        self.actionAdd_Custom_Amino_Acid.setText(_translate("MainWindow", "Add Unusual Amino Acid"))
-        self.actionAdd_Custom_Amino_Acid.setStatusTip(_translate("MainWindow", "Add unusual amino acid"))
-        self.actionAdd_Custom_Amino_Acid.setShortcut(_translate("MainWindow", "Ctrl+A"))
+        self.actionShow_Protected_Amino_Acid.setText(
+            _translate("MainWindow", "Show Protected Amino Acid"))
+        self.actionShow_Protected_Amino_Acid.setStatusTip(
+            _translate("MainWindow", "Shows protected amino acid table"))
+        self.actionShow_Protected_Amino_Acid.setShortcut(
+            _translate("MainWindow", "Ctrl+2"))
+        self.actionShow_Not_Protected_Amino_Acid.setText(
+            _translate("MainWindow", "Show Amino Acid"))
+        self.actionShow_Not_Protected_Amino_Acid.setStatusTip(
+            _translate("MainWindow", "Shows amino acid table"))
+        self.actionShow_Not_Protected_Amino_Acid.setShortcut(
+            _translate("MainWindow", "Ctrl+1"))
+        self.actionAdd_Custom_Amino_Acid.setText(
+            _translate("MainWindow", "Add Unusual Amino Acid"))
+        self.actionAdd_Custom_Amino_Acid.setStatusTip(
+            _translate("MainWindow", "Add unusual amino acid"))
+        self.actionAdd_Custom_Amino_Acid.setShortcut(
+            _translate("MainWindow", "Ctrl+A"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setStatusTip(_translate("MainWindow", "Exit program"))
         self.actionExit.setShortcut(_translate("MainWindow", "Ctrl+E"))
         self.actionInstruction.setText(_translate("MainWindow", "Help"))
-        self.actionInstruction.setStatusTip(_translate("MainWindow", "Shows Instruction how to use Peptide Mass Calculator"))
+        self.actionInstruction.setStatusTip(_translate(
+            "MainWindow", "Shows Instruction how to use Peptide Mass Calculator"))
         self.actionInstruction.setShortcut(_translate("MainWindow", "Ctrl+H"))
         self.actionTerminus.setText(_translate("MainWindow", "Show Terminus"))
-        self.actionTerminus.setToolTip(_translate("MainWindow", "Show Terminus"))
-        self.actionTerminus.setStatusTip(_translate("MainWindow", "Shows all Terminuses available to choose"))
+        self.actionTerminus.setToolTip(
+            _translate("MainWindow", "Show Terminus"))
+        self.actionTerminus.setStatusTip(_translate(
+            "MainWindow", "Shows all Terminuses available to choose"))
         self.actionTerminus.setShortcut(_translate("MainWindow", "Ctrl+3"))
-        self.actionDelete_Unusual_Amino_Acid.setText(_translate("MainWindow", "Delete Unusual Amino Acid"))
-        self.actionDelete_Unusual_Amino_Acid.setStatusTip(_translate("MainWindow", "Delete unusual amino acid"))
-        self.actionDelete_Unusual_Amino_Acid.setShortcut(_translate("MainWindow", "Ctrl+D"))
-        self.actionShow_Unusual_Amino_Acid.setText(_translate("MainWindow", "Show Unusual Amino Acid"))
-        self.actionShow_Unusual_Amino_Acid.setStatusTip(_translate("MainWindow", "Shows unusual amino acid table"))
-        self.actionShow_Unusual_Amino_Acid.setShortcut(_translate("MainWindow", "Ctrl+0"))
+        self.actionDelete_Unusual_Amino_Acid.setText(
+            _translate("MainWindow", "Delete Unusual Amino Acid"))
+        self.actionDelete_Unusual_Amino_Acid.setStatusTip(
+            _translate("MainWindow", "Delete unusual amino acid"))
+        self.actionDelete_Unusual_Amino_Acid.setShortcut(
+            _translate("MainWindow", "Ctrl+D"))
+        self.actionShow_Unusual_Amino_Acid.setText(
+            _translate("MainWindow", "Show Unusual Amino Acid"))
+        self.actionShow_Unusual_Amino_Acid.setStatusTip(
+            _translate("MainWindow", "Shows unusual amino acid table"))
+        self.actionShow_Unusual_Amino_Acid.setShortcut(
+            _translate("MainWindow", "Ctrl+0"))
 
 
 if __name__ == "__main__":

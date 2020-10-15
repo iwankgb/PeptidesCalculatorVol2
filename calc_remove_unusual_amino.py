@@ -1,5 +1,6 @@
 import csv
 
+
 class Remove:
 
     def remove_unsual_amino(self, value, value1, value2):
@@ -9,7 +10,8 @@ class Remove:
         molecular_weight = value2
 
         molecular_weight_str = str(molecular_weight)
-        remove_item_list = [amino_acid_input.upper(), letter_abbreviation_input.upper(), molecular_weight_str]
+        remove_item_list = [amino_acid_input.upper(
+        ), letter_abbreviation_input.upper(), molecular_weight_str]
 
         check_list = []
         check_list_1 = []
@@ -38,4 +40,3 @@ class Remove:
             return f'Unusual amino acid: {remove_item_list}; Has been removed successfully'
         except PermissionError:
             return "Please close 'unusual_amino.csv' file"
-

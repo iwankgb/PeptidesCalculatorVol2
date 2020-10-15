@@ -10,7 +10,8 @@ class Ui_Frame_i(object):
         Frame.setMinimumSize(QtCore.QSize(900, 200))
         Frame.setMaximumSize(QtCore.QSize(900, 200))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Frame.setWindowIcon(icon)
         self.label_4 = QtWidgets.QLabel(Frame)
         self.label_4.setGeometry(QtCore.QRect(30, 40, 113, 100))
@@ -40,7 +41,8 @@ class Ui_Frame_i(object):
     def retranslateUi_i(self, Frame, info_text):
 
         _translate = QtCore.QCoreApplication.translate
-        Frame.setWindowTitle(_translate("Frame", "PeptideMassCalculator - INFORMATION"))
+        Frame.setWindowTitle(_translate(
+            "Frame", "PeptideMassCalculator - INFORMATION"))
 
         info_text_1 = info_text.split(";")[0]
         info_text_2 = info_text.split(";")[1]
@@ -57,10 +59,10 @@ class Ui_Frame_i(object):
 
 
 if __name__ == '__main__':
-        import sys
-        app = QtWidgets.QApplication(sys.argv)
-        Frame = QtWidgets.QFrame()
-        ui = Ui_Frame_i()
-        ui.setupUi_i(Frame, 'test;test')
-        Frame.show()
-        sys.exit(app.exec_())
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Frame = QtWidgets.QFrame()
+    ui = Ui_Frame_i()
+    ui.setupUi_i(Frame, 'test;test')
+    Frame.show()
+    sys.exit(app.exec_())

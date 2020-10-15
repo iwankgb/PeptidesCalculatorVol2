@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Error_dialog_window import Ui_Frame
 from Information_dialog_window import Ui_Frame_i
 
+
 class Ui_AddUnusualAminoAcid(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -10,7 +11,8 @@ class Ui_AddUnusualAminoAcid(object):
         MainWindow.setMinimumSize(QtCore.QSize(600, 400))
         MainWindow.setMaximumSize(QtCore.QSize(600, 400))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -114,7 +116,8 @@ class Ui_AddUnusualAminoAcid(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PeptideMassCalculator - Add Unusual Amino Acid"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "PeptideMassCalculator - Add Unusual Amino Acid"))
         self.label_2.setText(_translate("MainWindow", "Amino acid"))
         self.label_3.setText(_translate("MainWindow", "3-letter abbreviation"))
         self.label.setText(_translate("MainWindow", "Molecular weight"))
@@ -137,7 +140,6 @@ class Ui_AddUnusualAminoAcid(object):
         self.open.show()
 
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -146,4 +148,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

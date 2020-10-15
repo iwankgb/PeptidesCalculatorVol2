@@ -8,7 +8,8 @@ class Ui_Frame(object):
         Frame.setMinimumSize(QtCore.QSize(900, 200))
         Frame.setMaximumSize(QtCore.QSize(900, 200))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Frame.setWindowIcon(icon)
         self.pushButton = QtWidgets.QPushButton(Frame)
         self.pushButton.setGeometry(QtCore.QRect(600, 140, 180, 28))
@@ -38,7 +39,8 @@ class Ui_Frame(object):
     def retranslateUi(self, Frame, error_text):
 
         _translate = QtCore.QCoreApplication.translate
-        Frame.setWindowTitle(_translate("Frame", "PeptideMassCalculator - ERROR !"))
+        Frame.setWindowTitle(_translate(
+            "Frame", "PeptideMassCalculator - ERROR !"))
         self.pushButton.setText(_translate("Frame", "OK"))
 
         if error_text.find(";") != -1:
@@ -67,10 +69,10 @@ class Ui_Frame(object):
 
 if __name__ == '__main__':
 
-        import sys
-        app = QtWidgets.QApplication(sys.argv)
-        Frame = QtWidgets.QFrame()
-        ui = Ui_Frame()
-        ui.setupUi(Frame, 'Test')
-        Frame.show()
-        app.exec_()
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Frame = QtWidgets.QFrame()
+    ui = Ui_Frame()
+    ui.setupUi(Frame, 'Test')
+    Frame.show()
+    app.exec_()

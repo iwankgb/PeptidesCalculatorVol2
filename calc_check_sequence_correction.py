@@ -1,15 +1,16 @@
 import re
 
+
 class Check:
 
     def check_sequence(self, data_sequence):
-
         '''check if sequence exist'''
         if len(data_sequence) == 0:
             return 'Please provide sequence'
 
         '''check if number of bracket is even number'''
-        check1 = [search.start() for search in re.finditer("[(|)]", data_sequence)]
+        check1 = [search.start()
+                  for search in re.finditer("[(|)]", data_sequence)]
 
         if len(check1) % 2 != 0:
             return 'Please correct sequence;One bracket is missing'
@@ -26,6 +27,7 @@ class Check:
             number -= 2
         else:
             return data_sequence
+
 
 if __name__ == '__main__':
     a = Check()

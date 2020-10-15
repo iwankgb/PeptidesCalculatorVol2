@@ -8,7 +8,8 @@ class Ui_FrameW(object):
         Frame.setMinimumSize(QtCore.QSize(500, 600))
         Frame.setMaximumSize(QtCore.QSize(500, 600))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Frame.setWindowIcon(icon)
         self.label = QtWidgets.QLabel(Frame)
         self.label.setGeometry(QtCore.QRect(20, 10, 451, 151))
@@ -29,7 +30,8 @@ class Ui_FrameW(object):
         self.pushButton.setStyleSheet("QPushButton{background: transparent;}")
         self.pushButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("peptid logo/ON.PNG"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("peptid logo/ON.PNG"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QtCore.QSize(100, 100))
         self.pushButton.setDefault(True)
@@ -41,7 +43,8 @@ class Ui_FrameW(object):
         self.pushButton_2.setStyleSheet("QPushButton{background:transparent;}")
         self.pushButton_2.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("peptid logo/Off.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("peptid logo/Off.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_2.setIcon(icon2)
         self.pushButton_2.setIconSize(QtCore.QSize(100, 100))
         self.pushButton_2.setObjectName("pushButton_2")
@@ -54,7 +57,8 @@ class Ui_FrameW(object):
 
     def retranslateUi(self, Frame):
         _translate = QtCore.QCoreApplication.translate
-        Frame.setWindowTitle(_translate("Frame", "PeptideMassCalculator - Welcome"))
+        Frame.setWindowTitle(_translate(
+            "Frame", "PeptideMassCalculator - Welcome"))
 
 
 if __name__ == "__main__":

@@ -11,7 +11,8 @@ class Ui_DeleteUnusualAmino(object):
         DeleteUnusualAmino.setMinimumSize(QtCore.QSize(600, 400))
         DeleteUnusualAmino.setMaximumSize(QtCore.QSize(600, 400))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("peptid logo/logo1.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         DeleteUnusualAmino.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(DeleteUnusualAmino)
         self.centralwidget.setObjectName("centralwidget")
@@ -112,6 +113,7 @@ class Ui_DeleteUnusualAmino(object):
             self.open_error(comunicate)
 
     '''open info window'''
+
     def open_info_i(self, communique):
         self.open = QtWidgets.QFrame()
         self.ui = Ui_Frame_i()
@@ -119,6 +121,7 @@ class Ui_DeleteUnusualAmino(object):
         self.open.show()
 
     '''open error window'''
+
     def open_error(self, communique):
         self.open = QtWidgets.QFrame()
         self.ui = Ui_Frame()
@@ -127,10 +130,13 @@ class Ui_DeleteUnusualAmino(object):
 
     def retranslateUi(self, DeleteUnusualAmino):
         _translate = QtCore.QCoreApplication.translate
-        DeleteUnusualAmino.setWindowTitle(_translate("DeleteUnusualAmino", "PeptideMassCalculator - Delete Unusual Amino Acid"))
+        DeleteUnusualAmino.setWindowTitle(_translate(
+            "DeleteUnusualAmino", "PeptideMassCalculator - Delete Unusual Amino Acid"))
         self.label_2.setText(_translate("DeleteUnusualAmino", "Amino acid"))
-        self.label_3.setText(_translate("DeleteUnusualAmino", "3-letter abbreviation"))
-        self.label.setText(_translate("DeleteUnusualAmino", "Molecular weight"))
+        self.label_3.setText(_translate(
+            "DeleteUnusualAmino", "3-letter abbreviation"))
+        self.label.setText(_translate(
+            "DeleteUnusualAmino", "Molecular weight"))
         self.pushButton.setText(_translate("DeleteUnusualAmino", "Delete"))
 
 

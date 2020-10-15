@@ -14,12 +14,13 @@ class Sequence:
         '''checks if sequence is correct'''
         check_sequence1 = Check()
         checking_result = check_sequence1.check_sequence(data_sequence)
-        if checking_result[0:6] == 'Please': #P - means there is an error
+        if checking_result[0:6] == 'Please':  # P - means there is an error
             return checking_result
         else:
             '''mark non standard amino by adding *'''
             mark_non_standard = Distinguish()
-            mark_data_sequence = mark_non_standard.distinguish_non_standard(data_sequence)
+            mark_data_sequence = mark_non_standard.distinguish_non_standard(
+                data_sequence)
 
             '''Search for non standard amino - 3 characters'''
             non_standard_amino = re.findall("\((.*?)\)", mark_data_sequence)
@@ -41,13 +42,13 @@ class Sequence:
             '''Use converter to prepare final list'''
             converted_list = Converter()
             sequence_list = list(converted_list.list_converter(final_list))
-            return self.amino_calculator(sequence_list, user_choice, n_terminus, c_terminus), sequence_list #returns amino_calculator function and sequence_list
+            # returns amino_calculator function and sequence_list
+            return self.amino_calculator(sequence_list, user_choice, n_terminus, c_terminus), sequence_list
 
     def split_sequence(self, string_to_split):
         return [char for char in string_to_split]
 
     def amino_calculator(self, sequence_list, user_choice, n_terminus, c_terminus):
-
         '''add endings to sequence_list'''
         if n_terminus != '':
             sequence_list.append(n_terminus)
@@ -62,6 +63,6 @@ class Sequence:
             for single_amino in sequence_list:
                 mass_result += amino_data_base[single_amino]
             result = round(mass_result, 2)
-            return result #returns the result
+            return result  # returns the result
         except KeyError:
-           return "Please be informed that sequence is incorrect;Amino acid or unusual amino acid, doesnt exist"
+            return "Please be informed that sequence is incorrect;Amino acid or unusual amino acid, doesnt exist"
